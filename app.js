@@ -14,33 +14,11 @@ const render = require("./lib/htmlRenderer");
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-
-
 //add a main() to cycle through these questions based on type of employee being entered
-main ()
-function main() {
-    //if user chooses "Manager", display manager prompts
-    //else if user chooses "Engineer", display engineer prompts
-    //else if user chooses "Intern", display engineer prompts,
-    //else if user choose no more ppl, console log and/or return the answers
-   managerInput();
-
-    if (answers.choices === "Manager") {
-        managerInput();
-    }
-    else if (answers.choices === "Engineer") {
-        engineerInput();
-    }
-    else if (answers.choices === "Intern") {
-        internInput();
-    }
-    else if (answers.choices === "I don't want to add more team members") {
-        console.log(answers)
-    }
-};
+managerInput();
 
 function managerInput() {
-    const managerQuestions = 
+    //const managerQuestions = 
     inquirer.prompt([
       {
         type: "input",
@@ -78,22 +56,38 @@ function managerInput() {
             ],
       },
     ])
-     .then(answers => {
-    //     console.info(answers);
-    return (answers);  
-})
-.catch(error => {
-    if(error.isTtyError) {
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else when wrong
-    }
-  });
+    // .then
+    //  (answers => 
+        //{
+        // console.log(answers);
+        const path = " ";
+         switch (path) {
+            case "Manager":
+              managerInput();
+          
+            case "Engineer":
+              engineerInput();
+          
+            case "Intern":
+              internInput();
+            
+              case "I don't want to add more team members":
+                console.log(answers);
+            }
+            
+    // return (managerInput.answers);  
+//}
+// .catch(error => {
+//     if(error.isTtyError) {
+//       // Prompt couldn't be rendered in the current environment
+//     } else {
+//       // Something else when wrong
+//     }
+//   });
   };
   
 
   function engineerInput() {
-    const engineerQuestions = 
     inquirer.prompt([
       {
         type: "input",
@@ -134,11 +128,9 @@ function managerInput() {
     // .then(answers => {
     //     console.info(answers);
     //   });
-    // return this.engineerQuestions(answers);
   }
 
   function internInput() {
-    const internQuestions = 
     inquirer.prompt([
       {
         type: "input",
@@ -179,7 +171,7 @@ function managerInput() {
     // .then(answers => {
     //     console.log(answers);
     //   });
-    // return this.internQuestions(answers);
+   // return this.internQuestions(answers);
   }
 
 // After the user has input all employees desired, call the `render` function (required
