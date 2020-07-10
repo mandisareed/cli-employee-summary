@@ -130,6 +130,24 @@ function engineerInput() {
   ])
   .then(answers => {
       console.info(answers);
+
+      switch (answers.employeetype) {
+        case "Manager":
+          managerInput()
+          break;
+    
+        case "Engineer":
+          engineerInput()
+          break;
+    
+        case "Intern":
+          internInput()
+          break;
+    
+        case "I don't want to add more team members":
+          console.log(answers);
+      }
+
     });
 }
 
@@ -173,6 +191,24 @@ function internInput() {
   ])
   .then(answers => {
       console.log(answers);
+
+      switch (answers.employeetype) {
+        case "Manager":
+          managerInput()
+          break;
+    
+        case "Engineer":
+          engineerInput()
+          break;
+    
+        case "Intern":
+          internInput()
+          break;
+    
+        case "I don't want to add more team members":
+          console.log(answers);
+      }
+
     });
   // return this.internQuestions(answers);
 }
