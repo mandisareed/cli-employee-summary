@@ -25,16 +25,16 @@ function main() {
     //else if user choose no more ppl, console log and/or return the answers
    managerInput();
 
-    if (this.answers.choices === "Manager") {
+    if (answers.choices === "Manager") {
         managerInput();
     }
-    else if (this.answers.choices === "Engineer") {
+    else if (answers.choices === "Engineer") {
         engineerInput();
     }
-    else if (this.answers.choices === "Intern") {
+    else if (answers.choices === "Intern") {
         internInput();
     }
-    else if (this.answers.choices === "I don't want to add more team members") {
+    else if (answers.choices === "I don't want to add more team members") {
         console.log(answers)
     }
 };
@@ -78,11 +78,19 @@ function managerInput() {
             ],
       },
     ])
-    // .then(answers => {
+     .then(answers => {
     //     console.info(answers);
-    //   });
-     //return this.managerQuestions(answers);
+    return (answers);  
+})
+.catch(error => {
+    if(error.isTtyError) {
+      // Prompt couldn't be rendered in the current environment
+    } else {
+      // Something else when wrong
+    }
+  });
   };
+  
 
   function engineerInput() {
     const engineerQuestions = 
