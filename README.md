@@ -1,4 +1,5 @@
 # cli-employee-summary
+https://github.com/mandisareed/cli-employee-summary
 
 ## Description:
 A CLI based application that utilizes Node JS, Javascript, and HTML that creates a webpage displaying a summary of an employee directory.
