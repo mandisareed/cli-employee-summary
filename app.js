@@ -15,113 +15,119 @@ const render = require("./lib/htmlRenderer");
 // and to create objects for each team member (using the correct classes as blueprints!)
 
 
-//prompts for engineer:
-//engineer's name?
-//engineer's id?
-//engineer's email?
-//engineer's github username?
-//which type of team member would you like to add: manager, engineer, intern, none?
-
-
-//prompts for intern:
-//intern's name?
-//intern's id?
-//intern's email?
-//intern's school?
-//which type of team member would you like to add: manager, engineer, intern, none?
 
 //add a main() to cycle through these questions based on type of employee being entered
-//managerInput();
-//engineerInput();
-internInput();
+main ()
+function main() {
+    //if user chooses "Manager", display manager prompts
+    //else if user chooses "Engineer", display engineer prompts
+    //else if user chooses "Intern", display engineer prompts,
+    //else if user choose no more ppl, console log and/or return the answers
+   managerInput();
 
-// function managerInput() {
-//     const managerQuestions = 
-//     inquirer.prompt([
-//       {
-//         type: "input",
-//         message: "What is your manager's name?",
-//         name: "name",
-//       },
+    if (this.answers.choices === "Manager") {
+        managerInput();
+    }
+    else if (this.answers.choices === "Engineer") {
+        engineerInput();
+    }
+    else if (this.answers.choices === "Intern") {
+        internInput();
+    }
+    else if (this.answers.choices === "I don't want to add more team members") {
+        console.log(answers)
+    }
+};
+
+function managerInput() {
+    const managerQuestions = 
+    inquirer.prompt([
+      {
+        type: "input",
+        message: "What is your manager's name?",
+        name: "name",
+      },
   
-//       {
-//         type: "input",
-//         message: "What is your manager's id?",
-//         name: "id",
-//       },
+      {
+        type: "input",
+        message: "What is your manager's id?",
+        name: "id",
+      },
   
-//       {
-//         type: "input",
-//         message: "What is your manager's email?",
-//         name: "email",
-//       },
+      {
+        type: "input",
+        message: "What is your manager's email?",
+        name: "email",
+      },
 
-//       {
-//         type: "input",
-//         message: "What is your manager's office number",
-//         name: "officeNumber",
-//       },
+      {
+        type: "input",
+        message: "What is your manager's office number",
+        name: "officeNumber",
+      },
 
-//       {
-//         type: "list",
-//         message: "Which type of team member would you like to add?",
-//         name: "employeetype",
-//         choices: [
-//                 "Manager",
-//                 "Engineer",
-//                 "Intern",
-//                 "I don't want to add more team members",
-//             ],
-//       },
-//     ]).then(answers => {
-//         console.info(answers);
-//       });
-//      return this.managerQuestions(answers);
-//   };
+      {
+        type: "list",
+        message: "Which type of team member would you like to add?",
+        name: "employeetype",
+        choices: [
+                "Manager",
+                "Engineer",
+                "Intern",
+                "I don't want to add more team members",
+            ],
+      },
+    ])
+    // .then(answers => {
+    //     console.info(answers);
+    //   });
+     //return this.managerQuestions(answers);
+  };
 
-//   function engineerInput() {
-//     const engineerQuestions = 
-//     inquirer.prompt([
-//       {
-//         type: "input",
-//         message: "What is your engineer's name?",
-//         name: "name",
-//       },
+  function engineerInput() {
+    const engineerQuestions = 
+    inquirer.prompt([
+      {
+        type: "input",
+        message: "What is your engineer's name?",
+        name: "name",
+      },
   
-//       {
-//         type: "input",
-//         message: "What is your engineer's id?",
-//         name: "id",
-//       },
+      {
+        type: "input",
+        message: "What is your engineer's id?",
+        name: "id",
+      },
   
-//       {
-//         type: "input",
-//         message: "What is your engineer's email?",
-//         name: "email",
-//       },
+      {
+        type: "input",
+        message: "What is your engineer's email?",
+        name: "email",
+      },
 
-//       {
-//         type: "input",
-//         message: "What is your engineer's Github username?",
-//         name: "github",
-//       },
+      {
+        type: "input",
+        message: "What is your engineer's Github username?",
+        name: "github",
+      },
 
-//       {
-//         type: "list",
-//         message: "Which type of team member would you like to add?",
-//         name: "employeetype",
-//         choices: [
-//                 "Manager",
-//                 "Engineer",
-//                 "Intern",
-//                 "I don't want to add more team members",
-//             ],
-//       },
-//     ]).then(answers => {
-//         console.info(answers);
-//       });
-//     // return this.engineerQuestions(answers);
-//   }
+      {
+        type: "list",
+        message: "Which type of team member would you like to add?",
+        name: "employeetype",
+        choices: [
+                "Manager",
+                "Engineer",
+                "Intern",
+                "I don't want to add more team members",
+            ],
+      },
+    ])
+    // .then(answers => {
+    //     console.info(answers);
+    //   });
+    // return this.engineerQuestions(answers);
+  }
 
   function internInput() {
     const internQuestions = 
@@ -161,9 +167,10 @@ internInput();
                 "I don't want to add more team members",
             ],
       },
-    ]).then(answers => {
-        console.log(answers);
-      });
+    ])
+    // .then(answers => {
+    //     console.log(answers);
+    //   });
     // return this.internQuestions(answers);
   }
 
