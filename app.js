@@ -13,12 +13,6 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-//prompts for manager:
-//manager's name?
-//manager's id?
-//manager's email?
-//manager's officenumber?
-//which type of team member would you like to add: manager, engineer, intern, none?
 
 
 //prompts for engineer:
@@ -36,34 +30,79 @@ const render = require("./lib/htmlRenderer");
 //intern's school?
 //which type of team member would you like to add: manager, engineer, intern, none?
 
-managerInput()
-// .then(console.log(answers));
+//add a main() to cycle through these questions based on type of employee being entered
+//managerInput();
+engineerInput();
 
-function managerInput() {
-    const managerQuestions = 
+// function managerInput() {
+//     const managerQuestions = 
+//     inquirer.prompt([
+//       {
+//         type: "input",
+//         message: "What is your manager's name?",
+//         name: "name",
+//       },
+  
+//       {
+//         type: "input",
+//         message: "What is your manager's id?",
+//         name: "id",
+//       },
+  
+//       {
+//         type: "input",
+//         message: "What is your manager's email?",
+//         name: "email",
+//       },
+
+//       {
+//         type: "input",
+//         message: "What is your manager's office number",
+//         name: "officeNumber",
+//       },
+
+//       {
+//         type: "list",
+//         message: "Which type of team member would you like to add?",
+//         name: "employeetype",
+//         choices: [
+//                 "Manager",
+//                 "Engineer",
+//                 "Intern",
+//                 "none",
+//             ],
+//       },
+//     ]).then(answers => {
+//         console.info(answers);
+//       });
+//      return this.managerQuestions(answers);
+//   };
+
+  function engineerInput() {
+    const engineerQuestions = 
     inquirer.prompt([
       {
         type: "input",
-        message: "What is your manager's name?",
+        message: "What is your engineer's name?",
         name: "name",
       },
   
       {
         type: "input",
-        message: "What is your manager's id?",
+        message: "What is your engineer's id?",
         name: "id",
       },
   
       {
         type: "input",
-        message: "What is your manager's email?",
+        message: "What is your engineer's email?",
         name: "email",
       },
 
       {
         type: "input",
-        message: "What is your manager's office number",
-        name: "officeNumber",
+        message: "What is your engineer's Github username?",
+        name: "github",
       },
 
       {
@@ -80,7 +119,7 @@ function managerInput() {
     ]).then(answers => {
         console.info(answers);
       });
-     return this.managerQuestions(answers);
+    // return this.engineerQuestions(answers);
   }
 
 // After the user has input all employees desired, call the `render` function (required
