@@ -32,7 +32,8 @@ const render = require("./lib/htmlRenderer");
 
 //add a main() to cycle through these questions based on type of employee being entered
 //managerInput();
-engineerInput();
+//engineerInput();
+internInput();
 
 // function managerInput() {
 //     const managerQuestions = 
@@ -69,7 +70,7 @@ engineerInput();
 //                 "Manager",
 //                 "Engineer",
 //                 "Intern",
-//                 "none",
+//                 "I don't want to add more team members",
 //             ],
 //       },
 //     ]).then(answers => {
@@ -78,31 +79,75 @@ engineerInput();
 //      return this.managerQuestions(answers);
 //   };
 
-  function engineerInput() {
-    const engineerQuestions = 
+//   function engineerInput() {
+//     const engineerQuestions = 
+//     inquirer.prompt([
+//       {
+//         type: "input",
+//         message: "What is your engineer's name?",
+//         name: "name",
+//       },
+  
+//       {
+//         type: "input",
+//         message: "What is your engineer's id?",
+//         name: "id",
+//       },
+  
+//       {
+//         type: "input",
+//         message: "What is your engineer's email?",
+//         name: "email",
+//       },
+
+//       {
+//         type: "input",
+//         message: "What is your engineer's Github username?",
+//         name: "github",
+//       },
+
+//       {
+//         type: "list",
+//         message: "Which type of team member would you like to add?",
+//         name: "employeetype",
+//         choices: [
+//                 "Manager",
+//                 "Engineer",
+//                 "Intern",
+//                 "I don't want to add more team members",
+//             ],
+//       },
+//     ]).then(answers => {
+//         console.info(answers);
+//       });
+//     // return this.engineerQuestions(answers);
+//   }
+
+  function internInput() {
+    const internQuestions = 
     inquirer.prompt([
       {
         type: "input",
-        message: "What is your engineer's name?",
+        message: "What is your intern's name?",
         name: "name",
       },
   
       {
         type: "input",
-        message: "What is your engineer's id?",
+        message: "What is your intern's id?",
         name: "id",
       },
   
       {
         type: "input",
-        message: "What is your engineer's email?",
+        message: "What is your intern's email?",
         name: "email",
       },
 
       {
         type: "input",
-        message: "What is your engineer's Github username?",
-        name: "github",
+        message: "What school does your intern attend?",
+        name: "school",
       },
 
       {
@@ -113,13 +158,13 @@ engineerInput();
                 "Manager",
                 "Engineer",
                 "Intern",
-                "none",
+                "I don't want to add more team members",
             ],
       },
     ]).then(answers => {
-        console.info(answers);
+        console.log(answers);
       });
-    // return this.engineerQuestions(answers);
+    // return this.internQuestions(answers);
   }
 
 // After the user has input all employees desired, call the `render` function (required
